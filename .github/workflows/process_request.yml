@@ -16,7 +16,7 @@ jobs:
       - name: Dumps
         run: |
           echo ------
-          echo ${{ github.event }}
+          echo ${{ github.event }} | jq .
 #      - name: Post prepare message
 #        uses: actions/github-script@v5
 #        with:
