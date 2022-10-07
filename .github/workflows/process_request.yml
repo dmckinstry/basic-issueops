@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Dumps
         run: |
+          apt install jq
           echo ------
           echo ${{ github.event }} | jq .
 #      - name: Post prepare message
