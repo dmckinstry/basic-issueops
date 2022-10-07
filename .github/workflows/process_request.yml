@@ -24,15 +24,15 @@ jobs:
           script: |
              const options = { myVariable: '$' }
              await require('./.github/scripts/prepare.js')({github, context, options})
-      - if: $
-        name: Report failed migration
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const body = `:no_entry: **Prepare step failed.** [View workflow run for details](${context.payload.repository.html_url}/actions/runs/${context.runId})`
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body
-            })
+#       - if: $
+#         name: Report failed migration
+#         uses: actions/github-script@v3
+#         with:
+#           script: |
+#             const body = `:no_entry: **Prepare step failed.** [View workflow run for details](${context.payload.repository.html_url}/actions/runs/${context.runId})`
+#             github.issues.createComment({
+#               issue_number: context.issue.number,
+#               owner: context.repo.owner,
+#               repo: context.repo.repo,
+#               body
+#             })
