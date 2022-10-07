@@ -10,13 +10,13 @@ jobs:
     runs-on:  ubuntu-latest
 
     if: github.event_name == 'issues' &&
-      (github.event.action == 'opened' || github.event.action == 'edited')
+      (github.event.action == 'opened' || github.event.action == 'edited' || github.event.action == 'labeled')
 
     steps:
       - name: Dumps
         run: |
           echo ------
-          echo ${{ github.context }}
+          echo ${{ github.event }}
 #      - name: Post prepare message
 #        uses: actions/github-script@v5
 #        with:
